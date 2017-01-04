@@ -1,0 +1,4 @@
+@import url(../../../node_modules/@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.min.css);
+body, html { background: teal; font: red; width: auto; }
+
+* { margin: 0; padding: 0; border: none; }
