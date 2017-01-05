@@ -1,99 +1,83 @@
 import React from 'react';
-import downArrow from '../images/icons/down.svg';
-
+// import downArrow from '../images/icons/down.svg';
 class App extends React.Component {
 	render() {
-		const customClass = {
-			fill: "#B7C5D1",
-			padding: "2px 5px"
-		};
-
 		return (
-			<div class="slds-table--edit_container slds-is-relative">
-				<table className="slds-table slds-table--edit slds-table--bordered slds-table--fixed-layout slds-no-cell-focus" role="grid">
-					<thead>
-						<tr className="slds-line-height--reset">
-							<th></th>
-							<th focusable="true" className="slds-is-sortable slds-is-resizable slds-text-title--caps" scope="col">
-								<a href="" className="slds-th__action slds-text-link--reset" tabindex="0">
-									<span className="slds-truncate" title="Name">Name</span>
-								</a>
-							</th>
-							<th focusable="true" className="slds-is-sortable slds-is-resizable slds-text-title--caps" scope="col">
-								<a href="" className="slds-th__action slds-text-link--reset" tabindex="0">
-									<span className="slds-truncate" title="Name">Priority</span>
-								</a>
-							</th>
-							<th focusable="true" className="slds-is-sortable slds-is-resizable slds-text-title--caps" scope="col">
-								<a href="" className="slds-th__action slds-text-link--reset" tabindex="0">
-									<span className="slds-truncate" title="Name">Due date</span>
-								</a>
-							</th>
-							<th focusable="true" className="slds-is-sortable slds-is-resizable slds-text-title--caps" scope="col">
-								<a href="" className="slds-th__action slds-text-link--reset" tabindex="0">
-									<span className="slds-truncate" title="Name">Assigned to</span>
-								</a>
-							</th>
-							<th focusable="true" className="slds-is-sortable slds-is-resizable slds-text-title--caps" scope="col">
-								<a href="" className="slds-th__action slds-text-link--reset" tabindex="0">
-									<span className="slds-truncate" title="Name">Compliance</span>
-								</a>
-							</th>
-							<th focusable="true" className="slds-is-sortable slds-is-resizable slds-text-title--caps" scope="col">
-								<a href="" className="slds-th__action slds-text-link--reset" tabindex="0">
-									<span className="slds-truncate" title="Name"></span>
-								</a>
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr className="slds-hint-parent">
-							<td role="gridcell" class="slds-text-align--right">
-								<div class="slds-th__action slds-th__action--form">
-									<span class="slds-checkbox">
-										<input type="checkbox" name="options" id="checkbox-1799" />
-									</span>
-								</div>
-							</td>
-							<td role="gridcell" className="slds-cell-edit">
-								<span class="slds-grid slds-grid--align-spread">
-									<span class="slds-truncate" title="Acme">Call Prospect to setup meeting</span>
-									<button class="slds-button slds-button--icon slds-cell-edit__button slds-m-left--x-small" tabindex="-1">
-										<span class="slds-assistive-text">Call Prospect to setup meeting</span>
-										<svg class="slds-button__icon slds-button__icon--hint slds-button__icon--edit" viewBox="0 0 38 24" >
-											<use xlinkHref={downArrow + '#down'}></use>
-										</svg>
-									</button>
-								</span>
-							</td>
-							<td role="gridcell" className="slds-cell-edit">
-								<span className="slds-truncate" title="High">High</span>
-							</td>
-							<td role="gridcell" className="slds-cell-edit">
-								<div className="slds-truncate" title="2/9/2017">2/9/2017</div>
-							</td>
-							<td role="gridcell slds-cell-edit">
-								<div className="slds-truncate" title="Andre Steele">Andre Steele</div>
-							</td>
-							<td role="gridcell" class="slds-text-align--right">
-								<div class="slds-th__action slds-th__action--form">
-									<span class="slds-checkbox">
-										<input type="checkbox" name="options" id="checkbox-1799" checked/>
-									</span>
-								</div>
-							</td>
-							<td role="gridcell">
-								<button className="slds-button slds-button--icon-border-filled slds-button--icon-x-small" style={customClass} title="Show More">
-									<svg class="slds-button__icon slds-button__icon--hint slds-button__icon--small" viewBox="0 0 38 24" >
-										<use xlinkHref={downArrow + '#down'}></use>
-									</svg>
-									<span className="slds-assistive-text">Show More</span>
-								</button>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+			<table className="slds-table slds-table--bordered slds-table--cell-buffer">
+				<thead>
+					<tr className="slds-text-title--caps">
+						<th scope="col">
+							<div className="slds-truncate" title="Opportunity Name">Opportunity Name</div>
+						</th>
+						<th scope="col">
+							<div className="slds-truncate" title="Account Name">Account Name</div>
+						</th>
+						<th scope="col">
+							<div className="slds-truncate" title="Close Date">Close Date</div>
+						</th>
+						<th scope="col">
+							<div className="slds-truncate" title="Stage">Stage</div>
+						</th>
+						<th scope="col">
+							<div className="slds-truncate" title="Confidence">Confidence</div>
+						</th>
+						<th scope="col">
+							<div className="slds-truncate" title="Amount">Amount</div>
+						</th>
+						<th scope="col">
+							<div className="slds-truncate" title="Contact">Contact</div>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row" data-label="Opportunity Name">
+							<div className="slds-truncate" title="Cloudhub">Cloudhub</div>
+						</th>
+						<td data-label="Account Name">
+							<div className="slds-truncate" title="Cloudhub">Cloudhub</div>
+						</td>
+						<td data-label="Close Date">
+							<div className="slds-truncate" title="4/14/2015">4/14/2015</div>
+						</td>
+						<td data-label="Prospecting">
+							<div className="slds-truncate" title="Prospecting">Prospecting</div>
+						</td>
+						<td data-label="Confidence">
+							<div className="slds-truncate" title="20%">20%</div>
+						</td>
+						<td data-label="Amount">
+							<div className="slds-truncate" title="$25k">$25k</div>
+						</td>
+						<td data-label="Contact">
+							<div className="slds-truncate" title="jrogers@cloudhub.com">jrogers@cloudhub.com</div>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row" data-label="Opportunity Name">
+							<div className="slds-truncate" title="Cloudhub + Anypoint Connectors">Cloudhub + Anypoint Connectors</div>
+						</th>
+						<td data-label="Account Name">
+							<div className="slds-truncate" title="Cloudhub">Cloudhub</div>
+						</td>
+						<td data-label="Close Date">
+							<div className="slds-truncate" title="4/14/2015">4/14/2015</div>
+						</td>
+						<td data-label="Prospecting">
+							<div className="slds-truncate" title="Prospecting">Prospecting</div>
+						</td>
+						<td data-label="Confidence">
+							<div className="slds-truncate" title="20%">20%</div>
+						</td>
+						<td data-label="Amount">
+							<div className="slds-truncate" title="$25k">$25k</div>
+						</td>
+						<td data-label="Contact">
+							<div className="slds-truncate" title="jrogers@cloudhub.com">jrogers@cloudhub.com</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		)
 	}
 }
