@@ -4,6 +4,40 @@ import ActionPlanTableRow from './ActionPlanTableRow';
 
 class ActionPlanTable extends React.Component {
 	render() {
+
+		const tasks = {
+			1: {
+				name: 'Call Prospect to setup a meeting',
+				priority: 'High',
+				edit: 'Admin',
+				days: 1,
+				assigned: 'Associate',
+				category: 'Phone call',
+				compliance: true,
+				dependentChildren: true,
+				dependentParent: null,
+				reminder: 'Email',
+				timeBefore: 1,
+				timeLength: 'day',
+				note: null
+			},
+			2: {
+				name: 'Prospect meeting',
+				priority: 'High',
+				edit: 'Admin',
+				days: 5,
+				assigned: 'Advisor',
+				category: 'Meeting',
+				compliance: true,
+				dependentChildren: false,
+				dependentParent: 1,
+				reminder: 'Email',
+				timeBefore: 1,
+				timeLength: 'day',
+				note: null
+			},
+		}
+
 		return (
 			<table className="slds-table slds-table--bordered slds-table--cell-buffer">
 				<thead>
@@ -26,7 +60,7 @@ class ActionPlanTable extends React.Component {
 					</tr>
 				</thead>
 				<tbody>
-					<ActionPlanTableRow></ActionPlanTableRow>
+					{Object.keys(tasks).map(key => <ActionPlanTableRow key={key} index={key} data={tasks[key]}/>)}
 				</tbody>
 			</table>
 		)

@@ -4,6 +4,7 @@ import chevronDown from '../images/icons/chevrondown.svg';
 
 class ActionPlanTableRow extends React.Component {
 	render() {
+		const { data } = this.props;
 		return (
 			<tr>
 				<td className="dataTable-smallCol">
@@ -23,7 +24,7 @@ class ActionPlanTableRow extends React.Component {
 					</div>
 				</td>
 				<td scope="row" data-label="Call Prospect to setup a meeting">
-					<div className="slds-truncate" title="Call Prospect to setup a meeting">Call Prospect to setup a meeting</div>
+					<div className="slds-truncate" title="Call Prospect to setup a meeting">{data.name}</div>
 				</td>
 				<td data-label="High">
 					<div className="slds-truncate" title="High">High</div>
@@ -46,6 +47,7 @@ class ActionPlanTableRow extends React.Component {
 					</button>
 				</td>
 			</tr>
+
 		)
 	}
 }

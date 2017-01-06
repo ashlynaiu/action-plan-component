@@ -1,5 +1,5 @@
 module.exports = {
-	task1: {
+	1: {
 		name: 'Call Prospect to setup a meeting',
 		priority: 'High',
 		edit: 'Admin',
@@ -7,14 +7,15 @@ module.exports = {
 		assigned: 'Associate',
 		category: 'Phone call',
 		compliance: true,
-		dependent: null,
+		dependentChildren: true,
+		dependentParent: null
 		reminder: 'Email',
 		timeBefore: 1,
 		timeLength: 'day',
 		note: null
 	},
 
-	task2: {
+	2: {
 		name: 'Prospect meeting',
 		priority: 'High',
 		edit: 'Admin',
@@ -22,14 +23,15 @@ module.exports = {
 		assigned: 'Advisor',
 		category: 'Meeting',
 		compliance: true,
-		dependent: 'task1',
+		dependentChildren: false,
+		dependentParent: 1,
 		reminder: 'Email',
 		timeBefore: 1,
 		timeLength: 'day',
 		note: null
 	},
 
-	task3: {
+	3: {
 		name: 'Log meeting notes into Salesforce',
 		priority: 'High',
 		edit: 'Admin',
@@ -44,7 +46,7 @@ module.exports = {
 		note: null
 	},
 
-	task4: {
+	4: {
 		name: 'Update client info in CRM',
 		priority: 'Medium',
 		edit: 'Everyone',
