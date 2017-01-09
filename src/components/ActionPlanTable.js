@@ -3,8 +3,19 @@ import React from 'react';
 import ActionPlanTableRow from './ActionPlanTableRow';
 
 class ActionPlanTable extends React.Component {
-	render() {
+	constructor() {
+		super();
+		this.collapseChildren = this.collapseChildren.bind(this);
+		this.state = {
+			dependentTask : {}
+		}
+	}
 
+	collapseChildren(key) {
+		this.setState({ key });
+	}
+
+	render() {
 		const tasks = {
 			1: {
 				name: 'Call Prospect to setup a meeting',
@@ -16,6 +27,7 @@ class ActionPlanTable extends React.Component {
 				compliance: true,
 				dependentChildren: true,
 				dependentParent: null,
+				nested: 0,
 				reminder: 'Email',
 				timeBefore: 1,
 				timeLength: 'day',
@@ -31,6 +43,7 @@ class ActionPlanTable extends React.Component {
 				compliance: true,
 				dependentChildren: false,
 				dependentParent: 1,
+				nested: 1,
 				reminder: 'Email',
 				timeBefore: 1,
 				timeLength: 'day',
@@ -60,7 +73,7 @@ class ActionPlanTable extends React.Component {
 					</tr>
 				</thead>
 				<tbody>
-					{Object.keys(tasks).map(key => <ActionPlanTableRow key={key} index={key} data={tasks[key]}/>)}
+					{Object.keys(tasks).map(key => <ActionPlanTableRow key={key} index={key} data={tasks[key]} collapseChildren={this.collapseChildren} />)}
 				</tbody>
 			</table>
 		)

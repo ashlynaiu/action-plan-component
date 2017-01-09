@@ -1,12 +1,16 @@
 @import url(../../../node_modules/@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.min.css);
 body { width: auto; }
 
+.dataTable-row--show { display: intial; }
+
+.dataTable-row--hide { display: none; }
+
 .dataTable-chevronDown { width: 12px; height: 7px; margin-right: 10px; }
 
 .dataTable-smallCol { width: 5%; }
 
 .dataTable-moreButton { padding: 2px 5px; fill: #BBC4D1; }
 
-.dataTable-dependent--1 { padding-left: 2rem !important; padding-right: 0 !important; }
+.dataTable-dependent--1 { padding-left: 2.5rem !important; padding-right: 0 !important; }
 
 * { margin: 0; padding: 0; border: none; }
