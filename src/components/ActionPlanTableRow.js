@@ -4,7 +4,7 @@ import chevronDown from '../images/icons/chevrondown.svg';
 
 class ActionPlanTableRow extends React.Component {
 	render() {
-		const { data, index } = this.props;
+		const { data, index, getParent, collapseChildren } = this.props;
 		const Advisor = 'Andre Steele';
 		const Associate = 'Luis Davis';
 
@@ -33,14 +33,12 @@ class ActionPlanTableRow extends React.Component {
 
 		let expandedCal = () => {
 			if(data.dependentParent > 0) {
-				let parent = this.props.getParent(data.dependentParent)
-				console.log(parent);
+				let parent = getParent(data.dependentParent)
 				if (!parent.expanded) {
-					console.log('I made it');
 					return 'dataTable-row--hide'
 				}
 			}
-			return 'herpderp'
+			return 'dataTable-row--show'
 		}
 
 		let showChevron = ()=> {
@@ -55,7 +53,7 @@ class ActionPlanTableRow extends React.Component {
 			<tr className={`${expandedCal()}`}>
 				<td className={`dataTable-smallCol ${indentCal()}`}>
 					<div className="slds-th__action slds-th__action--form">
-						<div className="dataTable-chevronDown" onClick={() => this.props.collapseChildren(index)}>
+						<div className="dataTable-chevronDown" onClick={() => collapseChildren(index)}>
 							<svg className="slds-button__icon--small" viewBox="0 0 52 52" aria-hidden="true">
 								{showChevron()}
 							</svg>

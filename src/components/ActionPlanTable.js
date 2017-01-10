@@ -13,14 +13,13 @@ class ActionPlanTable extends React.Component {
 	}
 
 		collapseChildren(key) {
-			console.log('this.props.tasks', this.state.tasks)
-			// this.props.tasks[key]['expanded'] = !this.props.tasks[key]['expanded']
-			this.state.tasks[key]['expanded'] = !this.state.tasks[key]['expanded']
-			this.setState(...this.state.tasks)
+			const task = {...this.state.tasks}
+			task[key]['expanded'] = !task[key]['expanded'];
+			this.setState({ task });
 		}
 
 		getParent(key) {
-			return this.props.tasks[key]
+			return this.props.tasks[key];
 		}
 
 	render() {
@@ -46,7 +45,10 @@ class ActionPlanTable extends React.Component {
 					</tr>
 				</thead>
 				<tbody>
-					{Object.keys(this.state.tasks).map(key => <ActionPlanTableRow key={key} index={key} data={this.state.tasks[key]} collapseChildren={this.collapseChildren} getParent={this.getParent}/>)}
+					{Object
+						.keys(this.state.tasks)
+						.map(key => <ActionPlanTableRow key={key} index={key} data={this.state.tasks[key]} collapseChildren={this.collapseChildren} getParent={this.getParent}/>)
+					}
 				</tbody>
 			</table>
 		)
