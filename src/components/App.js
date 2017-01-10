@@ -3,8 +3,44 @@ import ActionPlanTable from './ActionPlanTable';
 
 class App extends React.Component {
 	render() {
+		const tasks = {
+			1: {
+				name: 'Call Prospect to setup a meeting',
+				priority: 'High',
+				edit: 'Admin',
+				days: 1,
+				assigned: 'Associate',
+				category: 'Phone call',
+				compliance: true,
+				dependentChildren: true,
+				dependentParent: null,
+				nested: 0,
+				reminder: 'Email',
+				timeBefore: 1,
+				timeLength: 'day',
+				note: null,
+				expanded: true
+			},
+			2: {
+				name: 'Prospect meeting',
+				priority: 'High',
+				edit: 'Admin',
+				days: 5,
+				assigned: 'Advisor',
+				category: 'Meeting',
+				compliance: true,
+				dependentChildren: false,
+				dependentParent: 1,
+				nested: 1,
+				reminder: 'Email',
+				timeBefore: 1,
+				timeLength: 'day',
+				note: null,
+				expanded: false
+			},
+		}
 		return (
-			<ActionPlanTable></ActionPlanTable>
+			<ActionPlanTable tasks={tasks}></ActionPlanTable>
 		)
 	}
 }

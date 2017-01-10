@@ -31,6 +31,18 @@ class ActionPlanTableRow extends React.Component {
 			}
 		};
 
+		let expandedCal = () => {
+			if(data.dependentParent > 0) {
+				let parent = this.props.getParent(data.dependentParent)
+				console.log(parent);
+				if (!parent.expanded) {
+					console.log('I made it');
+					return 'dataTable-row--hide'
+				}
+			}
+			return 'herpderp'
+		}
+
 		let showChevron = ()=> {
 			if(data.dependentChildren === true) {
 				return (
@@ -40,7 +52,7 @@ class ActionPlanTableRow extends React.Component {
 		};
 
 		return (
-			<tr>
+			<tr className={`${expandedCal()}`}>
 				<td className={`dataTable-smallCol ${indentCal()}`}>
 					<div className="slds-th__action slds-th__action--form">
 						<div className="dataTable-chevronDown" onClick={() => this.props.collapseChildren(index)}>
