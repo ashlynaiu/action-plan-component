@@ -12,15 +12,15 @@ class ActionPlanTable extends React.Component {
 		}
 	}
 
-		collapseChildren(key) {
-			const task = {...this.state.tasks}
-			task[key]['expanded'] = !task[key]['expanded'];
-			this.setState({ task });
-		}
+	collapseChildren(key) {
+		const task = {...this.state.tasks}
+		task[key]['expanded'] = !task[key]['expanded'];
+		this.setState({ task });
+	}
 
-		getParent(key) {
-			return this.props.tasks[key];
-		}
+	getParent(key) {
+		return this.props.tasks[key];
+	}
 
 	render() {
 		return (

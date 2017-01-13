@@ -4,13 +4,6 @@ import DropdownMenu from './DropdownMenu';
 import ActionPlanTableRowDay from './ActionPlanTableRowDay';
 
 class ActionPlanTableRow extends React.Component {
-	constructor() {
-		super();
-		this.state = {
-			showDropdown: false
-		}
-	}
-
 	render() {
 		const { data, index, getParent, collapseChildren } = this.props;
 		//Set Assigned Role Names
@@ -37,13 +30,14 @@ class ActionPlanTableRow extends React.Component {
 
 		//Calculate whether the rows should be hidden or shown
 		let expandedCal = () => {
+			console.log('made it');
 			if(data.dependentParent > 0) {
 				let parent = getParent(data.dependentParent)
 				if (!parent.expanded) {
-					return 'dataTable-row--hide'
+					return 'hide-element';
 				}
 			}
-			return 'dataTable-row--show'
+			return 'show-element';
 		}
 
 		//Calculate if the row should have a Chevron

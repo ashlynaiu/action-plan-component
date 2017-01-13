@@ -1,8 +1,10 @@
 @import url(../../../node_modules/@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.min.css);
 body { width: auto; }
 
-.dataTable .dataTable-row--show { display: intial; }
-.dataTable .dataTable-row--hide { display: none; }
+.hide-element { display: none; }
+
+.show-element { display: inital; }
+
 .dataTable .dataTable-chevronDown { width: 12px; height: 7px; margin-right: 10px; }
 .dataTable .dataTable-smallCol { width: 5%; }
 .dataTable .dataTable-moreButton { fill: #BBC4D1; }
