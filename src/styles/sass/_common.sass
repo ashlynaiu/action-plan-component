@@ -1,24 +1,31 @@
 body
 	width: auto
 
-.dataTable-row--show
-	display: intial
+.dataTable
+	.dataTable-row--show
+		display: intial
 
-.dataTable-row--hide
-	display: none
+	.dataTable-row--hide
+		display: none
 
-.dataTable-chevronDown
-	width: 12px
-	height: 7px
-	margin-right: 10px
+	.dataTable-chevronDown
+		width: 12px
+		height: 7px
+		margin-right: 10px
 
-.dataTable-smallCol
-	width: 5%
+	.dataTable-smallCol
+		width: 5%
 
-.dataTable-moreButton
-	padding: 2px 5px
-	fill: #BBC4D1
+	.dataTable-moreButton
+		fill: #BBC4D1
+		svg
+			width: 55%
 
-.dataTable-dependent--1
-	padding-left: 2.5rem !important
-	padding-right: 0 !important
+	.dataTable-dependent
+		display: flex
+		align-items: center
+
+	.dataTable-dependent--1
+		@extend .dataTable-dependent
+		padding-left: 2.5rem !important
+		padding-right: 0 !important

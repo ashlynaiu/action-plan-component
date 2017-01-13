@@ -1,21 +1,23 @@
 import React from 'react';
-import downArrow from '../images/icons/down.svg';
 import chevronDown from '../images/icons/chevrondown.svg';
+import DropdownMenu from './DropdownMenu';
+import ActionPlanTableRowDay from './ActionPlanTableRowDay';
 
 class ActionPlanTableRow extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			showDropdown: false
+		}
+	}
+
 	render() {
 		const { data, index, getParent, collapseChildren } = this.props;
+		//Set Assigned Role Names
 		const Advisor = 'Andre Steele';
 		const Associate = 'Luis Davis';
 
-		let dueDate = (days)=> {
-			let today = new Date();
-			let dd = today.getDate() + days;
-			let mm = today.getMonth() + 1;
-			let yyyy = today.getFullYear();
-			return mm+'/'+dd+'/'+yyyy;
-		};
-
+		//Calculate who is assigned to the role
 		let assignedName = (role)=> {
 			if(role === 'Advisor') {
 				return Advisor;
@@ -25,12 +27,15 @@ class ActionPlanTableRow extends React.Component {
 			}
 		};
 
+		//Calculate the indentation of a row by adding the appropriate class
 		let indentCal = ()=> {
 			if(data.dependentParent > 0) {
 				return `dataTable-dependent--${data.nested}`;
 			}
+			return 'dataTable-dependent';
 		};
 
+		//Calculate whether the rows should be hidden or shown
 		let expandedCal = () => {
 			if(data.dependentParent > 0) {
 				let parent = getParent(data.dependentParent)
@@ -41,6 +46,7 @@ class ActionPlanTableRow extends React.Component {
 			return 'dataTable-row--show'
 		}
 
+		//Calculate if the row should have a Chevron
 		let showChevron = ()=> {
 			if(data.dependentChildren === true) {
 				return (
@@ -51,7 +57,7 @@ class ActionPlanTableRow extends React.Component {
 
 		return (
 			<tr className={`${expandedCal()}`}>
-				<td className={`dataTable-smallCol ${indentCal()}`}>
+				<td scope="row" className={indentCal()} data-label={data.name}>
 					<div className="slds-th__action slds-th__action--form">
 						<div className="dataTable-chevronDown" onClick={() => collapseChildren(index)}>
 							<svg className="slds-button__icon--small" viewBox="0 0 52 52" aria-hidden="true">
@@ -66,16 +72,12 @@ class ActionPlanTableRow extends React.Component {
 							</label>
 						</span>
 					</div>
-				</td>
-				<td scope="row" data-label={data.name}>
 					<div className="slds-truncate" title={data.name}>{data.name}</div>
 				</td>
 				<td data-label={data.priority}>
 					<div className="slds-truncate" title={data.priority}>{data.priority}</div>
 				</td>
-				<td data-label={dueDate(data.days)}>
-					<div className="slds-truncate" title={dueDate(data.days)}>{dueDate(data.days)}</div>
-				</td>
+				<ActionPlanTableRowDay data={data} getParent={getParent}/>
 				<td data-label={assignedName(data.assigned)}>
 					<div className="slds-truncate" title={assignedName(data.assigned)}>{assignedName(data.assigned)}</div>
 				</td>
@@ -83,15 +85,9 @@ class ActionPlanTableRow extends React.Component {
 					<div className="slds-truncate" title="20%">20%</div>
 				</td>
 				<td data-label="Amount">
-					<button className="slds-button slds-button--icon-border-filled slds-button--icon-x-small dataTable-moreButton" title="Show More">
-						<svg className="slds-button__icon slds-button__icon--hint slds-button__icon--small" viewBox="0 0 38 24" aria-hidden="true">
-							<use xlinkHref={downArrow + '#down'}></use>
-						</svg>
-						<span className="slds-assistive-text">Show More</span>
-					</button>
+					<DropdownMenu />
 				</td>
 			</tr>
-
 		)
 	}
 }
