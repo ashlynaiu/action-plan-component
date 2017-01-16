@@ -6,6 +6,9 @@ body { width: auto; }
 .show-element { display: inital; }
 
 .dataTable .dataTable-chevronDown { width: 12px; height: 7px; margin-right: 10px; }
+.dataTable .dataTable-paddingReset { padding: 0 !important; border: none !important; }
+.dataTable .dataTable-cellSmall { width: 10%; }
+.dataTable .dataTable-cellLarge { width: 12%; }
 .dataTable .dataTable-smallCol { width: 5%; }
 .dataTable .dataTable-moreButton { fill: #BBC4D1; }
 .dataTable .dataTable-moreButton svg { width: 55%; }

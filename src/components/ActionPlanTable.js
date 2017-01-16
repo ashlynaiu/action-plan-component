@@ -28,19 +28,22 @@ class ActionPlanTable extends React.Component {
 				<thead>
 					<tr className="slds-text-title--caps">
 						<th scope="col">
-							<div className="slds-truncate" title="Opportunity Name">Name</div>
+							<div className="slds-truncate " title="Opportunity Name">Name</div>
 						</th>
-						<th scope="col">
+						<th scope="col" className="dataTable-cellLarge">
 							<div className="slds-truncate" title="Account Name">Priority</div>
 						</th>
-						<th scope="col">
+						<th scope="col" className="dataTable-cellLarge">
 							<div className="slds-truncate" title="Close Date">Due Date</div>
 						</th>
-						<th scope="col">
+						<th scope="col" className="dataTable-cellLarge">
 							<div className="slds-truncate" title="Stage">Assigned To</div>
 						</th>
-						<th scope="col" colSpan="2">
+						<th scope="col" className="dataTable-cellSmall">
 							<div className="slds-truncate" title="Confidence">Compliance</div>
+						</th>
+						<th scope="Show More" className="dataTable-cellSmall">
+							<div title="Show More"></div>
 						</th>
 					</tr>
 				</thead>

@@ -21,7 +21,7 @@ class ActionPlanTableRowDay extends React.Component {
 		};
 
 		return (
-			<td data-label={dueDate(data.days)}>
+			<td data-label={dueDate(data.days)} className="dataTable-cellLarge">
 				<div className="slds-truncate" title={dueDate(data.days)}>{dueDate(data.days)}</div>
 			</td>
 		)
