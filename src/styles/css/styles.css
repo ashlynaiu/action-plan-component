@@ -15,4 +15,7 @@ body { width: auto; }
 .dataTable .dataTable-dependent, .dataTable .dataTable-dependent--1 { display: flex; align-items: center; }
 .dataTable .dataTable-dependent--1 { padding-left: 2.5rem !important; padding-right: 0 !important; }
 
+.custom-modal .form-row { display: flex; justify-content: space-between; margin-bottom: 15px; }
+.custom-modal .form-row .slds-form-element { width: 48%; }
+
 * { margin: 0; padding: 0; border: none; }

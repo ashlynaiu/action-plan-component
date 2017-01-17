@@ -17,6 +17,7 @@ class DropdownMenu extends React.Component {
 	}
 
 	render() {
+		const { showMoreModalToggle } = this.props;
 		let showMoreClass = ()=> {
 			if (!this.state.showDropdown) {
 				return 'slds-is-closed';
@@ -35,23 +36,23 @@ class DropdownMenu extends React.Component {
 					</button>
 					<div className="slds-dropdown slds-dropdown--right">
 						<ul className="slds-dropdown__list" role="menu">
-							<li className="slds-dropdown__item" role="presentation">
-								<a href="" role="menuitem" tabIndex="0">
+							<li className="slds-dropdown__item" role="presentation" onClick={() => showMoreModalToggle()}>
+								<a role="menuitem" tabIndex="0">
 									<span className="slds-truncate">More Options</span>
 								</a>
 							</li>
 							<li className="slds-dropdown__item" role="presentation">
-								<a href="" role="menuitem" tabIndex="-1">
+								<a role="menuitem" tabIndex="-1">
 									<span className="slds-truncate">Add Subtask</span>
 								</a>
 							</li>
 							<li className="slds-dropdown__item" role="presentation">
-								<a href="" role="menuitem" tabIndex="-1">
+								<a role="menuitem" tabIndex="-1">
 									<span className="slds-truncate">Collapse</span>
 								</a>
 							</li>
 							<li className="slds-dropdown__item" role="presentation">
-								<a href="" role="menuitem" tabIndex="-1">
+								<a role="menuitem" tabIndex="-1">
 									<span className="slds-truncate">Delete</span>
 								</a>
 							</li>
