@@ -23,7 +23,6 @@ class ActionPlanTable extends React.Component {
 	}
 
 	render() {
-		const { showMoreModalToggle } = this.props;
 		return (
 			<table className="dataTable slds-table slds-table--bordered slds-table--cell-buffer">
 				<thead>
@@ -51,7 +50,7 @@ class ActionPlanTable extends React.Component {
 				<tbody>
 					{Object
 						.keys(this.state.tasks)
-						.map(key => <ActionPlanTableRow key={key} index={key} data={this.state.tasks[key]} collapseChildren={this.collapseChildren} getParent={this.getParent} showMoreModalToggle={showMoreModalToggle} />)
+						.map(key => <ActionPlanTableRow key={key} index={key} data={this.state.tasks[key]} collapseChildren={this.collapseChildren} getParent={this.getParent} showMoreModalToggle={this.props.showMoreModalToggle} />)
 					}
 				</tbody>
 			</table>

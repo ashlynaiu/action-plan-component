@@ -5,6 +5,7 @@ class DropdownMenu extends React.Component {
 	constructor() {
 		super();
 		this.toggleDropdownButton = this.toggleDropdownButton.bind(this);
+		this.openMoreModal = this.openMoreModal.bind(this);
 		this.state = {
 			showDropdown: false
 		}
@@ -16,8 +17,12 @@ class DropdownMenu extends React.Component {
 		);
 	}
 
+	openMoreModal(index) {
+		this.toggleDropdownButton();
+		this.props.showMoreModalToggle(index);
+	}
+
 	render() {
-		const { showMoreModalToggle } = this.props;
 		let showMoreClass = ()=> {
 			if (!this.state.showDropdown) {
 				return 'slds-is-closed';
@@ -36,19 +41,14 @@ class DropdownMenu extends React.Component {
 					</button>
 					<div className="slds-dropdown slds-dropdown--right">
 						<ul className="slds-dropdown__list" role="menu">
-							<li className="slds-dropdown__item" role="presentation" onClick={() => showMoreModalToggle()}>
+							<li className="slds-dropdown__item" role="presentation" onClick={() => this.openMoreModal(this.props.index)}>
 								<a role="menuitem" tabIndex="0">
-									<span className="slds-truncate">More Options</span>
+									<span className="slds-truncate">Details</span>
 								</a>
 							</li>
 							<li className="slds-dropdown__item" role="presentation">
 								<a role="menuitem" tabIndex="-1">
-									<span className="slds-truncate">Add Subtask</span>
-								</a>
-							</li>
-							<li className="slds-dropdown__item" role="presentation">
-								<a role="menuitem" tabIndex="-1">
-									<span className="slds-truncate">Collapse</span>
+									<span className="slds-truncate">Edit</span>
 								</a>
 							</li>
 							<li className="slds-dropdown__item" role="presentation">

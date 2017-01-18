@@ -3,9 +3,15 @@ import ModalShowMoreHeader from './ModalShowMoreHeader';
 
 class ModalShowMore extends React.Component {
 	render() {
-		const { showMoreModal, showMoreModalToggle } = this.props;
+		const { tasks, showMoreModal, showMoreModalToggle } = this.props;
+
+		//Trim the task data
+		let key = showMoreModal.modalIndex;
+		let data = tasks.tasks[key];
+
+		//Show or hide the modal logic
 		let showMoreClass = ()=> {
-			if (!showMoreModal) {
+			if (!showMoreModal.open) {
 				return 'hide-element';
 			}
 			return 'show-element';
@@ -24,7 +30,7 @@ class ModalShowMore extends React.Component {
 								<div className="slds-form-element">
 									<label className="slds-form-element__label" htmlFor="text-input-01">Task Name</label>
 									<div className="slds-form-element__control">
-										<input type="text" id="text-input-01" className="slds-input" placeholder="Task Name" />
+										<input type="text" id="text-input-01" className="slds-input" placeholder={data.name} />
 									</div>
 								</div>
 								<div className="slds-form-element">
@@ -49,39 +55,45 @@ class ModalShowMore extends React.Component {
 									</div>
 								</div>
 								<div className="slds-form-element">
-									<label className="slds-form-element__label" htmlFor="text-input-04">Due Date</label>
+									<label className="slds-form-element__label" htmlFor="text-input-04">Days Until Due</label>
 									<div className="slds-form-element__control">
-										<input type="text" id="text-input-04" className="slds-input" placeholder="2/9/2017" />
+										<input type="text" id="text-input-04" className="slds-input" placeholder={data.days} />
 									</div>
 								</div>
 							</div>
 
 							<div className="form-row">
 								<div className="slds-form-element">
-									<label className="slds-form-element__label" htmlFor="text-input-03">Category</label>
+									<label className="slds-form-element__label" htmlFor="select-05">Category</label>
 									<div className="slds-form-element__control">
-										<input type="text" id="text-input-03" className="slds-input" placeholder="Phone Call" />
-									</div>
-								</div>
-								<div className="slds-form-element">
-									<label className="slds-form-element__label" htmlFor="text-input-04">Task Dependency</label>
-									<div className="slds-form-element__control">
-										<input type="text" id="text-input-04" className="slds-input" placeholder="None" />
-									</div>
-								</div>
-							</div>
-
-							<div className="form-row">
-								<div className="slds-form-element">
-									<label className="slds-form-element__label" htmlFor="text-input-05">Editable by</label>
-									<div className="slds-form-element__control">
-										<input type="text" id="text-input-05" className="slds-input" placeholder="Everyone" />
+										<div className="slds-select_container">
+											<select className="slds-select" id="select-05">
+												<option>Phone Call</option>
+												<option>Email</option>
+												<option>Misc</option>
+											</select>
+										</div>
 									</div>
 								</div>
 								<div className="slds-form-element">
 									<label className="slds-form-element__label" htmlFor="text-input-06">Task Dependency</label>
 									<div className="slds-form-element__control">
-										<input type="text" id="text-input-06" className="slds-input" placeholder="None" />
+										<input type="text" id="text-input-06" className="slds-input" placeholder={data.dependentParentName} />
+									</div>
+								</div>
+							</div>
+
+							<div className="form-row">
+								<div className="slds-form-element">
+									<label className="slds-form-element__label" htmlFor="text-input-07">Editable by</label>
+									<div className="slds-form-element__control">
+										<input type="text" id="text-input-07" className="slds-input" placeholder={data.edit} />
+									</div>
+								</div>
+								<div className="slds-form-element">
+									<label className="slds-form-element__label" htmlFor="text-input-08">Task Dependency</label>
+									<div className="slds-form-element__control">
+										<input type="text" id="text-input-08" className="slds-input" placeholder="None" />
 									</div>
 								</div>
 							</div>

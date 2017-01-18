@@ -8,21 +8,29 @@ class App extends React.Component {
 		this.showMoreModalToggle = this.showMoreModalToggle.bind(this);
 		this.state = {
 			tasks: { tasks },
-			showMoreModal: false
+			showMoreModal: {
+				open: false,
+				modalIndex: 1
+			}
 		};
 	}
 
-	showMoreModalToggle() {
-		this.setState(
-			{ showMoreModal: !this.state.showMoreModal }
-		);
+	showMoreModalToggle(index) {
+		const showMoreModal = {...this.state.showMoreModal}
+		showMoreModal['open'] = !this.state.showMoreModal['open'];
+
+		//If a new index is not passed, skip step
+		if (index > 0 ) {
+			showMoreModal['modalIndex'] = index;
+		}
+
+		this.setState({ showMoreModal });
 	}
 
-	//selectedData={ this.selectedData }
 	render() {
 		return (
 			<div>
-				<ModalShowMore showMoreModal={this.state.showMoreModal} showMoreModalToggle={this.showMoreModalToggle}/>
+				<ModalShowMore showMoreModal={this.state.showMoreModal} showMoreModalToggle={this.showMoreModalToggle} tasks={this.state.tasks}></ModalShowMore>
 				<ActionPlanTable tasks={tasks} showMoreModalToggle={this.showMoreModalToggle} ></ActionPlanTable>
 			</div>
 		)
