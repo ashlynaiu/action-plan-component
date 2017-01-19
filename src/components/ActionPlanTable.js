@@ -1,4 +1,3 @@
-// dataTable-dependent--1 to indent row
 import React from 'react';
 import ActionPlanTableRow from './ActionPlanTableRow';
 

@@ -12,8 +12,10 @@ body { width: auto; }
 .dataTable .dataTable-smallCol { width: 5%; }
 .dataTable .dataTable-moreButton { fill: #BBC4D1; }
 .dataTable .dataTable-moreButton svg { width: 55%; }
-.dataTable .dataTable-dependent, .dataTable .dataTable-dependent--1 { display: flex; align-items: center; }
+.dataTable .dataTable-dependent, .dataTable .dataTable-dependent--1, .dataTable .dataTable-dependent--2, .dataTable .dataTable-dependent--3 { display: flex; align-items: center; }
 .dataTable .dataTable-dependent--1 { padding-left: 2.5rem !important; padding-right: 0 !important; }
+.dataTable .dataTable-dependent--2 { padding-left: 3.5rem !important; padding-right: 0 !important; }
+.dataTable .dataTable-dependent--3 { padding-left: 4rem !important; padding-right: 0 !important; }
 
 .custom-modal .form-row { display: flex; justify-content: space-between; margin-bottom: 15px; }
 .custom-modal .form-row .slds-form-element { width: 48%; }
