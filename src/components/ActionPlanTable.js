@@ -11,10 +11,27 @@ class ActionPlanTable extends React.Component {
 		}
 	}
 
+	recursiveToggle (key, value, tasks) {
+		if ( value === true ) {
+			tasks[key]['expanded'] = !tasks[key]['expanded'];
+			Object.keys(tasks).forEach((task_id) => {
+				// Do things
+			})
+		} else if (tasks[key]['dependentChildren']) {
+			tasks[key]['expanded'] = value
+			Object.keys(tasks).forEach((task_id) => {
+				if ( task_id !== key && tasks[task_id]['expanded'] !== value && tasks[task_id]['dependentChildren'] && parseInt(task_id, 10) !== tasks[key]['dependentParent'] ) {
+					this.recursiveToggle(task_id, value, tasks)
+				}
+			})
+		}
+		return
+	}
+
 	collapseChildren(key) {
-		const task = {...this.state.tasks}
-		task[key]['expanded'] = !task[key]['expanded'];
-		this.setState({ task });
+		const tasks = {...this.state.tasks}
+		this.recursiveToggle(key, !tasks[key]['expanded'], tasks)
+		this.setState({ tasks });
 	}
 
 	getParent(key) {
