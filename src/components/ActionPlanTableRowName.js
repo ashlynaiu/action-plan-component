@@ -48,12 +48,12 @@ class ActionPlanTableRowName extends React.Component {
 		let chevronCSS = ()=> {
 			if(data.dependentChildren === true) {
 				if(this.state.chevronCollapsed) {
-						return 'chevron-closed';
-					}
-					else {
-						return 'chevron-open';
-					}
+					return 'chevron-closed';
 				}
+				else {
+					return 'chevron-open';
+				}
+			}
 		}
 
 		return (
@@ -68,7 +68,7 @@ class ActionPlanTableRowName extends React.Component {
 						<input type="checkbox" name="options" id={`checkbox-${index}`} />
 						<label className="slds-checkbox__label" htmlFor={`checkbox-${index}`}>
 							<span className="slds-checkbox--faux"></span>
-							<span className="slds-form-element__label slds-assistive-text">Select All</span>
+							<span className="slds-form-element__label slds-assistive-text">Mark completed</span>
 						</label>
 					</span>
 				</div>

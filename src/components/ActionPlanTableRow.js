@@ -3,6 +3,7 @@ import DropdownMenu from './DropdownMenu';
 import ActionPlanTableRowName from './ActionPlanTableRowName';
 import ActionPlanTableRowDay from './ActionPlanTableRowDay';
 import ActionPlanTableRowAssigned from './ActionPlanTableRowAssigned';
+import ActionPlanTableRowCompliance from './ActionPlanTableRowCompliance';
 
 class ActionPlanTableRow extends React.Component {
 	render() {
@@ -31,9 +32,7 @@ class ActionPlanTableRow extends React.Component {
 
 				<ActionPlanTableRowAssigned data={data} />
 
-				<td data-label="" className="dataTable-cellSmall">
-					<div className="slds-truncate" title="20%">20%</div>
-				</td>
+				<ActionPlanTableRowCompliance data={data} index={index}/>
 
 				<DropdownMenu showMoreModalToggle={showMoreModalToggle} index={index}/>
 			</tr>
