@@ -2,12 +2,12 @@ import React from 'react';
 import chevronDown from '../images/icons/chevrondown.svg';
 
 class ActionPlanTableRowName extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.clickHandler = this.clickHandler.bind(this);
 		this.transformChevron = this.transformChevron.bind(this);
 		this.state = {
-			chevronCollapsed: false
+			chevronCollapsed: this.props.data.expanded
 		}
 	}
 
@@ -19,7 +19,7 @@ class ActionPlanTableRowName extends React.Component {
 	transformChevron() {
 		if(this.props.data.dependentChildren === true) {
 			let chevron = this.state.chevronCollapsed;
-			chevron = !chevron;
+			chevron = this.props.data.expanded;
 			this.setState({ chevronCollapsed: chevron})
 		}
 	}
@@ -48,10 +48,10 @@ class ActionPlanTableRowName extends React.Component {
 		let chevronCSS = ()=> {
 			if(data.dependentChildren === true) {
 				if(this.state.chevronCollapsed) {
-					return 'chevron-closed';
+					return 'chevron-open';
 				}
 				else {
-					return 'chevron-open';
+					return 'chevron-closed';
 				}
 			}
 		}
