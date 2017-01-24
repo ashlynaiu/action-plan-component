@@ -1,5 +1,5 @@
 import React from 'react';
-import ActionPlanTable from './ActionPlanTable';
+import ActionPlanCard from'./ActionPlanCard';
 import ModalShowMore from './modals/ModalShowMore';
 import tasks from '../action-plan-data';
 class App extends React.Component {
@@ -31,7 +31,7 @@ class App extends React.Component {
 		return (
 			<div>
 				<ModalShowMore showMoreModal={this.state.showMoreModal} showMoreModalToggle={this.showMoreModalToggle} tasks={this.state.tasks}></ModalShowMore>
-				<ActionPlanTable tasks={tasks} showMoreModalToggle={this.showMoreModalToggle} ></ActionPlanTable>
+				<ActionPlanCard tasks={tasks} showMoreModalToggle={this.showMoreModalToggle} ></ActionPlanCard>
 			</div>
 		)
 	}
