@@ -1,9 +1,13 @@
 @import url(../../../node_modules/@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.min.css);
 body { width: auto; }
 
+.slds-global-header_container { position: inherit; }
+
 .hide-element { display: none; }
 
 .show-element { display: inital; }
+
+.actionPlanContainer { overflow: scroll; }
 
 .dataTable .dataTable-chevronDown { width: 12px; height: 7px; margin-right: 10px; }
 .dataTable .chevron-closed { transform: rotate(-0.25turn) translateX(-6px) translateY(-6px); }
@@ -29,5 +33,10 @@ body { width: auto; }
 
 .custom-buttonGroup { margin-right: 24px; }
 .custom-buttonGroup svg { width: 30%; }
+
+.bodyContainer { display: flex; }
+.bodyContainer-leftPanel { padding: 24px; width: 65%; }
+.bodyContainer-rightPanel { padding: 24px; width: 35%; }
+.bodyContainer-rightPanel .slds-button-group-list { display: flex; }
 
 * { margin: 0; padding: 0; border: none; }

@@ -1,11 +1,26 @@
 body
 	width: auto
 
+//////////////////////////////////
+/////Lightning Design Resets/////
+////////////////////////////////
+.slds-global-header_container
+	position: inherit
+
+////////////////////////////
+/////Hide & Show Rules/////
+//////////////////////////
 .hide-element
 	display: none
 
 .show-element
 	display: inital
+
+/////////////////////
+/////Data table/////
+///////////////////
+.actionPlanContainer
+	overflow: scroll
 
 .dataTable
 	.dataTable-chevronDown
@@ -60,6 +75,9 @@ body
 		padding-left: 5rem !important
 		padding-right: 0 !important
 
+////////////////
+/////Modal/////
+//////////////
 .custom-modal
 	.form-row
 		display: flex
@@ -86,3 +104,20 @@ body
 	margin-right: 24px
 	svg
 		width: 30%
+
+/////////////////
+/////Panels/////
+///////////////
+
+.bodyContainer
+	display: flex
+
+	&-leftPanel
+		padding: 24px
+		width: 65%
+
+	&-rightPanel
+		padding: 24px
+		width: 35%
+		.slds-button-group-list
+			display: flex
