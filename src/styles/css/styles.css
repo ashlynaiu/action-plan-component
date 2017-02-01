@@ -44,6 +44,12 @@ body { width: auto; }
 
 .custom-buttonGroup svg { width: 30%; }
 
+.iconCustom { padding: 4px; }
+
+.iconCustom--blue { padding: 4px; background-color: #1589EE; }
+
+.iconCustom--green { padding: 4px; background-color: #4BC076; }
+
 .actionPlanProgressBar { padding: 0 20px; }
 
 progress[value] { -webkit-appearance: none; appearance: none; width: 100%; height: 10px; }

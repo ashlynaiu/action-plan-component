@@ -1,6 +1,8 @@
 import React from 'react';
 import ActionPlanTable from './ActionPlanTable';
 import downArrow from '../images/icons/down.svg';
+import list from '../images/icons/list.svg';
+import task from '../images/icons/task.svg';
 
 class ActionPlanCard extends React.Component {
 	constructor(props) {
@@ -26,7 +28,7 @@ class ActionPlanCard extends React.Component {
 					value++
 				}
 			}
-			return ( value / totalTasks ) * 100;
+			return Math.ceil(( value / totalTasks ) * 100);
 		}
 
 		return (
@@ -35,8 +37,8 @@ class ActionPlanCard extends React.Component {
 					<header className="slds-media slds-media--center slds-has-flexi-truncate">
 						<div className="slds-media__figure">
 							<span className="slds-icon_container slds-icon-standard-contact" title="description of icon when needed">
-								<svg className="slds-icon slds-icon--small" aria-hidden="true">
-
+								<svg className="slds-icon slds-icon--small iconCustom--blue" viewBox="0 0 52 52" aria-hidden="true">
+									<use xlinkHref={list + '#list'}></use>
 								</svg>
 							</span>
 						</div>
@@ -69,7 +71,7 @@ class ActionPlanCard extends React.Component {
 						<div className="actionPlanSummary">
 							<div className="actionPlanSummary-data">
 								<span>Plan Completion</span>
-								<p>0%</p>
+								<p>{progressBar()}%</p>
 							</div>
 							<div className="actionPlanSummary-data">
 								<span>Plan Due</span>
@@ -93,8 +95,8 @@ class ActionPlanCard extends React.Component {
 						<header className="slds-media slds-media--center slds-has-flexi-truncate">
 							<div className="slds-media__figure">
 								<span className="slds-icon_container slds-icon-standard-contact" title="description of icon when needed">
-									<svg className="slds-icon slds-icon--small" aria-hidden="true">
-
+									<svg className="slds-icon slds-icon--small iconCustom--green" viewBox="0 0 52 52" aria-hidden="true">
+										<use xlinkHref={task + '#task'}></use>
 									</svg>
 								</span>
 							</div>
