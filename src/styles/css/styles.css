@@ -24,8 +24,16 @@ body { width: auto; }
 .dataTable .dataTable-dependent--3 { padding-left: 4rem !important; padding-right: 0 !important; }
 .dataTable .dataTable-dependent--4 { padding-left: 5rem !important; padding-right: 0 !important; }
 
-.custom-modal .form-row { display: flex; justify-content: space-between; margin-bottom: 15px; }
-.custom-modal .form-row .slds-form-element { width: 48%; }
+.custom-modal .form-row, .custom-modal .form-row--small { display: flex; margin-bottom: 15px; }
+.custom-modal .form-row .slds-form-element, .custom-modal .form-row--small .slds-form-element { width: 48%; }
+
+.custom-modal .slds-modal__container { width: 60%; max-width: none; min-width: none; }
+.custom-modal .form-row { justify-content: space-between; }
+.custom-modal .form-row--small .slds-input { margin: 0 8px; width: 80%; }
+.custom-modal .form-row--small .slds-select { width: 150px; }
+.custom-modal .form-row--small .slds-button { width: 100px; }
+.custom-modal .form-row--small .slds-button svg { fill: #6D7996; }
+.custom-modal .customCheckbox { margin-top: 26px; }
 
 .slds-card .slds-card__header--top { border-bottom: 1px solid #d8dde6; padding-bottom: 0.75rem; margin-bottom: 0; }
 .slds-card .slds-card__body--details { border-bottom: 1px solid #d8dde6; background-color: white; padding-top: 16px; }

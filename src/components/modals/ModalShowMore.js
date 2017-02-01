@@ -1,6 +1,6 @@
 import React from 'react';
 import ModalShowMoreHeader from './ModalShowMoreHeader';
-
+import close from '../../images/icons/close.svg';
 class ModalShowMore extends React.Component {
 	render() {
 		const { tasks, showMoreModal, showMoreModalToggle } = this.props;
@@ -85,16 +85,56 @@ class ModalShowMore extends React.Component {
 
 							<div className="form-row">
 								<div className="slds-form-element">
-									<label className="slds-form-element__label" htmlFor="text-input-07">Editable by</label>
-									<div className="slds-form-element__control">
-										<input type="text" id="text-input-07" className="slds-input" placeholder={data.edit} />
+									<label className="slds-form-element__label" htmlFor="text-input-07">Notifications</label>
+									<div className="form-row--small">
+
+										<div className="slds-form-element__control">
+											<div className="slds-select_container">
+												<select className="slds-select">
+													<option>Email</option>
+													<option>Alert</option>
+												</select>
+											</div>
+										</div>
+
+										<div className="slds-form-element__control">
+											<input type="text" id="text-input-07" className="slds-input" placeholder={data.timeBefore} />
+										</div>
+
+										<div className="slds-form-element__control">
+											<div className="slds-select_container">
+												<select className="slds-select">
+													<option>Day</option>
+													<option>Week</option>
+													<option>Month</option>
+												</select>
+											</div>
+										</div>
+										<button className="slds-button" aria-haspopup="true" title="Close">
+											<svg className="slds-button__icon" viewBox="0 0 52 52" aria-hidden="true">
+												<use xlinkHref={close + '#close'}></use>
+											</svg>
+										</button>
 									</div>
+
 								</div>
 								<div className="slds-form-element">
-									<label className="slds-form-element__label" htmlFor="text-input-08">Task Dependency</label>
-									<div className="slds-form-element__control">
-										<input type="text" id="text-input-08" className="slds-input" placeholder="None" />
+									<div className="slds-form-element__control customCheckbox">
+										<span className="slds-checkbox">
+											<input type="checkbox" name="options" checked />
+											<label className="slds-checkbox__label">
+												<span className="slds-checkbox--faux"></span>
+												<span className="slds-form-element__label">Completion required for compliance</span>
+											</label>
+										</span>
 									</div>
+								</div>
+							</div>
+
+							<div className="slds-form-element">
+								<label className="slds-form-element__label">Notes</label>
+								<div className="slds-form-element__control">
+									<textarea className="slds-textarea" placeholder="Placeholder Text"></textarea>
 								</div>
 							</div>
 

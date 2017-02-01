@@ -10,7 +10,7 @@ class ModalShowMoreHeader extends React.Component {
 					</svg>
 					<span className="slds-assistive-text">Close</span>
 				</button>
-				<h2 id="modal-heading-01" className="slds-text-heading--medium">Modal Header</h2>
+				<h2 id="modal-heading-01" className="slds-text-heading--medium">Task Details</h2>
 			</header>
 		)
 	}

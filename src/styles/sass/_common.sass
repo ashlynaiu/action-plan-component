@@ -78,13 +78,37 @@ body
 ////////////////
 /////Modal/////
 //////////////
+%form-row
+	display: flex
+	margin-bottom: 15px
+	.slds-form-element
+		width: 48%
+
 .custom-modal
+	.slds-modal__container
+		width: 60%
+		max-width: none
+		min-width: none
 	.form-row
-		display: flex
+		@extend %form-row
 		justify-content: space-between
-		margin-bottom: 15px
-		.slds-form-element
-			width: 48%
+
+	.form-row--small
+		@extend %form-row
+		.slds-input
+			margin: 0 8px
+			width: 80%
+		.slds-select
+			width: 150px
+		.slds-button
+			width: 100px
+			svg
+				fill: #6D7996
+
+	.customCheckbox
+		margin-top: 26px
+
+
 
 ///////////////////////
 /////Summary card/////
