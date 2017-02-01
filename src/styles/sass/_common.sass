@@ -89,10 +89,20 @@ body
 ///////////////////////
 /////Summary card/////
 /////////////////////
+.slds-card
+	.slds-card__header--top
+		border-bottom: 1px solid #d8dde6
+		padding-bottom: .75rem
+		margin-bottom: 0
+	.slds-card__body--details
+		border-bottom: 1px solid #d8dde6
+		background-color: white
+		padding-top: 16px
+
 .actionPlanSummary
 	display: flex
 	background-color: #fff
-	padding: 30px 20px
+	padding: 20px 24px
 	justify-content: space-between
 
 .actionPlanSummary-data
@@ -101,9 +111,30 @@ body
 		color: #6D7996
 
 .custom-buttonGroup
-	margin-right: 24px
 	svg
 		width: 30%
+
+///////////////////////
+/////Progress Bar/////
+/////////////////////
+
+.actionPlanProgressBar
+	padding: 0 20px
+
+//Reset
+progress[value]
+	-webkit-appearance: none
+	appearance: none
+	width: 100%
+	height: 10px
+
+progress[value]::-webkit-progress-bar
+	background-color: #d8dde6
+	border-radius: 2px
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.20) inset
+
+progress[value]::-webkit-progress-value
+	background-color: #4BC076
 
 /////////////////
 /////Panels/////

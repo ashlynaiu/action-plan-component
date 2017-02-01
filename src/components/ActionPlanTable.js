@@ -79,7 +79,7 @@ class ActionPlanTable extends React.Component {
 					<tbody>
 						{Object
 							.keys(this.props.tasks)
-							.map(key => <ActionPlanTableRow key={key} index={key} data={this.props.tasks[key]} collapseChildren={this.collapseChildren} getParent={this.getParent} showMoreModalToggle={this.props.showMoreModalToggle} />)
+							.map(key => <ActionPlanTableRow key={key} index={key} data={this.props.tasks[key]} collapseChildren={this.collapseChildren} getParent={this.getParent} showMoreModalToggle={this.props.showMoreModalToggle} completeTask={this.props.completeTask} />)
 						}
 					</tbody>
 				</table>

@@ -15,7 +15,8 @@ module.exports = {
 		timeBefore: 1,
 		timeLength: 'day',
 		note: null,
-		expanded: true
+		expanded: true,
+		completed: false
 	},
 	2: {
 		name: 'Prospect meeting',
@@ -33,7 +34,8 @@ module.exports = {
 		timeBefore: 1,
 		timeLength: 'day',
 		note: null,
-		expanded: true
+		expanded: true,
+		completed: false
 	},
 	3: {
 		name: 'Log meeting notes into Salesforce',
@@ -51,7 +53,8 @@ module.exports = {
 		timeBefore: 1,
 		timeLength: 'day',
 		note: null,
-		expanded: false
+		expanded: false,
+		completed: false
 	},
 	4: {
 		name: 'Update client info in CRM',
@@ -69,7 +72,8 @@ module.exports = {
 		timeBefore: 1,
 		timeLength: 'day',
 		note: null,
-		expanded: false
+		expanded: false,
+		completed: false
 	},
 	5: {
 		name: 'Follow up email',
@@ -87,7 +91,8 @@ module.exports = {
 		timeBefore: 1,
 		timeLength: 'day',
 		note: null,
-		expanded: false
+		expanded: false,
+		completed: false
 	},
 	6: {
 		name: 'Prepare paperwork to send to client.',
@@ -105,7 +110,8 @@ module.exports = {
 		timeBefore: 1,
 		timeLength: 'day',
 		note: null,
-		expanded: true
+		expanded: true,
+		completed: false
 	},
 	7: {
 		name: 'Submit paperwork',
@@ -123,7 +129,8 @@ module.exports = {
 		timeBefore: 1,
 		timeLength: 'day',
 		note: null,
-		expanded: true
+		expanded: true,
+		completed: false
 	},
 	8: {
 		name: 'Apply follow up in a quarter task template',
@@ -141,7 +148,8 @@ module.exports = {
 		timeBefore: 1,
 		timeLength: 'day',
 		note: null,
-		expanded: false
+		expanded: false,
+		completed: false
 	},
 	9: {
 		name: 'Attach Setting Client Expectation survey and template',
@@ -159,6 +167,7 @@ module.exports = {
 		timeBefore: 1,
 		timeLength: 'day',
 		note: null,
-		expanded: false
+		expanded: false,
+		completed: false
 	}
 }

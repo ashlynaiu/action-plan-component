@@ -3,10 +3,35 @@ import ActionPlanTable from './ActionPlanTable';
 import downArrow from '../images/icons/down.svg';
 
 class ActionPlanCard extends React.Component {
+	constructor(props) {
+		super(props);
+		this.completeTask = this.completeTask.bind(this);
+		this.state = {
+			tasks: this.props.tasks
+		}
+	}
+
+	completeTask(index) {
+		const tasks = {...this.state.tasks};
+		tasks[index]['completed'] = !tasks[index]['completed']
+		this.setState({ tasks })
+	}
+
 	render() {
+		let progressBar = ()=> {
+			let value = 0;
+			let totalTasks = Object.keys(this.props.tasks).length;
+			for (let k = 1; k < totalTasks; k++) {
+				if (this.props.tasks[k]['completed'] === true) {
+					value++
+				}
+			}
+			return ( value / totalTasks ) * 100;
+		}
+
 		return (
 			<article className="slds-card">
-				<div className="slds-card__header slds-grid">
+				<div className="slds-card__header slds-card__header--top slds-grid">
 					<header className="slds-media slds-media--center slds-has-flexi-truncate">
 						<div className="slds-media__figure">
 							<span className="slds-icon_container slds-icon-standard-contact" title="description of icon when needed">
@@ -37,26 +62,31 @@ class ActionPlanCard extends React.Component {
 					</div>
 				</div>
 				<div className="slds-card__body">
-					<div className="actionPlanSummary">
-						<div className="actionPlanSummary-data">
-							<span>Plan Completion</span>
-							<p>0%</p>
+					<div className="slds-card__body--details">
+						<div className="actionPlanProgressBar">
+							<progress max="100" value={progressBar()}></progress>
 						</div>
-						<div className="actionPlanSummary-data">
-							<span>Plan Due</span>
-							<p>3/1/2017</p>
-						</div>
-						<div className="actionPlanSummary-data">
-							<span>Owner</span>
-							<p>Luis Davis</p>
-						</div>
-						<div className="actionPlanSummary-data">
-							<span>Tasks Completed</span>
-							<p>0 out of 9</p>
-						</div>
-						<div className="actionPlanSummary-data">
-							<span>Next Meeting</span>
-							<p>None</p>
+						<div className="actionPlanSummary">
+							<div className="actionPlanSummary-data">
+								<span>Plan Completion</span>
+								<p>0%</p>
+							</div>
+							<div className="actionPlanSummary-data">
+								<span>Plan Due</span>
+								<p>3/1/2017</p>
+							</div>
+							<div className="actionPlanSummary-data">
+								<span>Owner</span>
+								<p>Luis Davis</p>
+							</div>
+							<div className="actionPlanSummary-data">
+								<span>Tasks Completed</span>
+								<p>0 out of 9</p>
+							</div>
+							<div className="actionPlanSummary-data">
+								<span>Next Meeting</span>
+								<p>None</p>
+							</div>
 						</div>
 					</div>
 					<div className="slds-card__header slds-grid">
@@ -80,7 +110,7 @@ class ActionPlanCard extends React.Component {
 							<button className="slds-button slds-button--neutral">New Task</button>
 						</div>
 					</div>
-					<ActionPlanTable tasks={this.props.tasks} showMoreModalToggle={this.props.showMoreModalToggle} ></ActionPlanTable>
+					<ActionPlanTable tasks={this.props.tasks} showMoreModalToggle={this.props.showMoreModalToggle} completeTask={this.completeTask} ></ActionPlanTable>
 				</div>
 			</article>
 		)

@@ -7,7 +7,7 @@ import ActionPlanTableRowCompliance from './ActionPlanTableRowCompliance';
 
 class ActionPlanTableRow extends React.Component {
 	render() {
-		const { data, index, getParent, showMoreModalToggle } = this.props;
+		const { data, index, getParent, showMoreModalToggle, completeTask } = this.props;
 
 		let expandedCal = () => {
 			if(data.dependentParent > 0) {
@@ -22,7 +22,7 @@ class ActionPlanTableRow extends React.Component {
 		return (
 			<tr className={`${expandedCal()}`}>
 
-				<ActionPlanTableRowName data={data} collapseChildren={this.props.collapseChildren} index={index} />
+				<ActionPlanTableRowName data={data} collapseChildren={this.props.collapseChildren} index={index} completeTask={completeTask} />
 
 				<td data-label={data.priority} className="dataTable-cellLarge">
 					<div className="slds-truncate" title={data.priority}>{data.priority}</div>
