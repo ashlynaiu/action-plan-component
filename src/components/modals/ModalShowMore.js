@@ -134,7 +134,7 @@ class ModalShowMore extends React.Component {
 							<div className="slds-form-element">
 								<label className="slds-form-element__label">Notes</label>
 								<div className="slds-form-element__control">
-									<textarea className="slds-textarea" placeholder="Placeholder Text"></textarea>
+									<textarea className="slds-textarea" placeholder="Task notes"></textarea>
 								</div>
 							</div>
 
