@@ -6,8 +6,6 @@ import './styles/css/styles.css';
 import App from './components/App';
 import NotFound from './components/NotFound';
 
-// const repo = `/${window.location.pathname.split('/')[1]}`;
-
 const Root = () => {
   return (
     <BrowserRouter>

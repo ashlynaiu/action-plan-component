@@ -46,7 +46,7 @@ class DropdownMenu extends React.Component {
 									<span className="slds-truncate">Details</span>
 								</a>
 							</li>
-							<li className="slds-dropdown__item" role="presentation">
+							<li className="slds-dropdown__item" role="presentation" onClick={() => this.openMoreModal(this.props.index)}>
 								<a role="menuitem" tabIndex="-1">
 									<span className="slds-truncate">Edit</span>
 								</a>

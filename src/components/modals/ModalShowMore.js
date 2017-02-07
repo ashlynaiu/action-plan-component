@@ -3,7 +3,7 @@ import ModalShowMoreHeader from './ModalShowMoreHeader';
 import close from '../../images/icons/close.svg';
 class ModalShowMore extends React.Component {
 	render() {
-		const { tasks, showMoreModal, showMoreModalToggle } = this.props;
+		const { taskNames, tasks, showMoreModal, showMoreModalToggle } = this.props;
 		const data = tasks;
 
 		//Show or hide the modal logic
@@ -75,7 +75,14 @@ class ModalShowMore extends React.Component {
 								<div className="slds-form-element">
 									<label className="slds-form-element__label" htmlFor="text-input-06">Task Dependency</label>
 									<div className="slds-form-element__control">
-										<input type="text" id="text-input-06" className="slds-input" placeholder={data.dependentParentName} />
+										<div className="slds-select_container">
+											<select className="slds-select" id="select-11">
+												{Object
+													.keys(taskNames)
+													.map(key => <option key={key}>{taskNames[key]}</option>)
+												}
+											</select>
+										</div>
 									</div>
 								</div>
 							</div>

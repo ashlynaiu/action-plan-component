@@ -32,10 +32,18 @@ class App extends React.Component {
 		this.setState({ showMoreModal });
 	}
 
+
 	render() {
+		let taskNames = ()=> {
+			let taskNameArray = ['None'];
+			Object.keys(tasks).forEach((key) => {
+				taskNameArray.push(tasks[key]['name']);
+			})
+			return taskNameArray;
+		}
 		return (
 			<div>
-				<ModalShowMore showMoreModal={this.state.showMoreModal} showMoreModalToggle={this.showMoreModalToggle} tasks={this.state.showMoreModal.tasks}></ModalShowMore>
+				<ModalShowMore taskNames={taskNames()} showMoreModal={this.state.showMoreModal} showMoreModalToggle={this.showMoreModalToggle} tasks={this.state.showMoreModal.tasks}></ModalShowMore>
 				<Header />
 				<div className="bodyContainer">
 					<div className="bodyContainer-leftPanel">
