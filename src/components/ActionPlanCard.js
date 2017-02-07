@@ -109,7 +109,7 @@ class ActionPlanCard extends React.Component {
 							</div>
 						</header>
 						<div className="slds-no-flex">
-							<button className="slds-button slds-button--neutral">New Task</button>
+							<button className="slds-button slds-button--neutral" onClick={() => this.props.showMoreModalToggle()}>New Task</button>
 						</div>
 					</div>
 					<ActionPlanTable tasks={this.props.tasks} showMoreModalToggle={this.props.showMoreModalToggle} completeTask={this.completeTask} ></ActionPlanTable>

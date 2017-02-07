@@ -4,10 +4,7 @@ import close from '../../images/icons/close.svg';
 class ModalShowMore extends React.Component {
 	render() {
 		const { tasks, showMoreModal, showMoreModalToggle } = this.props;
-
-		//Trim the task data
-		let key = showMoreModal.modalIndex;
-		let data = tasks.tasks[key];
+		const data = tasks;
 
 		//Show or hide the modal logic
 		let showMoreClass = ()=> {
@@ -51,7 +48,7 @@ class ModalShowMore extends React.Component {
 								<div className="slds-form-element">
 									<label className="slds-form-element__label" htmlFor="text-input-03">Assigned To</label>
 									<div className="slds-form-element__control">
-										<input type="text" id="text-input-03" className="slds-input" placeholder="Luis Davis" />
+										<input type="text" id="text-input-03" className="slds-input" placeholder={data.assigned} />
 									</div>
 								</div>
 								<div className="slds-form-element">
@@ -121,7 +118,7 @@ class ModalShowMore extends React.Component {
 								<div className="slds-form-element">
 									<div className="slds-form-element__control customCheckbox">
 										<span className="slds-checkbox">
-											<input type="checkbox" name="options" checked />
+											<input type="checkbox" name="options" />
 											<label className="slds-checkbox__label">
 												<span className="slds-checkbox--faux"></span>
 												<span className="slds-form-element__label">Completion required for compliance</span>

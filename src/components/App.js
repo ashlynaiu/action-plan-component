@@ -5,6 +5,7 @@ import RightPanel from'./RightPanel';
 import LeftPanel from'./LeftPanel';
 import ModalShowMore from './modals/ModalShowMore';
 import tasks from '../action-plan-data';
+import defaultTasks from '../default-action-plan-data';
 class App extends React.Component {
 	constructor() {
 		super();
@@ -13,7 +14,7 @@ class App extends React.Component {
 			tasks: { tasks },
 			showMoreModal: {
 				open: false,
-				modalIndex: 1
+				tasks: { defaultTasks }
 			}
 		};
 	}
@@ -22,18 +23,21 @@ class App extends React.Component {
 		const showMoreModal = {...this.state.showMoreModal}
 		showMoreModal['open'] = !this.state.showMoreModal['open'];
 
-		//If a new index is not passed, skip step
-		if (index > 0 ) {
-			showMoreModal['modalIndex'] = index;
+		if (index > 0) {
+			let tasks = this.state.tasks.tasks[index];
+			showMoreModal['tasks'] = tasks;
 		}
-
+		else {
+			let tasks = defaultTasks;
+			showMoreModal['tasks'] = tasks;
+		}
 		this.setState({ showMoreModal });
 	}
 
 	render() {
 		return (
 			<div>
-				<ModalShowMore showMoreModal={this.state.showMoreModal} showMoreModalToggle={this.showMoreModalToggle} tasks={this.state.tasks}></ModalShowMore>
+				<ModalShowMore showMoreModal={this.state.showMoreModal} showMoreModalToggle={this.showMoreModalToggle} tasks={this.state.showMoreModal.tasks}></ModalShowMore>
 				<Header />
 				<div className="bodyContainer">
 					<div className="bodyContainer-leftPanel">
