@@ -15,7 +15,20 @@ class ActionPlanCard extends React.Component {
 
 	completeTask(index) {
 		const tasks = {...this.state.tasks};
-		tasks[index]['completed'] = !tasks[index]['completed']
+
+		//Toggle the checkbox
+		tasks[index]['completed'] = !tasks[index]['completed'];
+
+		//Evaluate the disabled checkboxes and enable/disable dependent tasks
+		let totalTasks = Object.keys(this.props.tasks).length;
+		if (tasks[index]['dependentChildren']) {
+			for (let k = 1; k < totalTasks; k++) {
+				if(tasks[k]['dependentParentName'] === tasks[index]['name'])
+					tasks[k]['disabled'] = !tasks[k]['disabled'];
+			}
+		}
+
+		//Update the state
 		this.setState({ tasks })
 	}
 

@@ -65,7 +65,7 @@ class ActionPlanTableRowName extends React.Component {
 						</svg>
 					</div>
 					<span className="slds-checkbox">
-						<input type="checkbox" name="options" id={`checkbox-${index}`} onChange={() => completeTask(index)} />
+						<input type="checkbox" name="options" id={`checkbox-${index}`} disabled={data.disabled} onChange={() => completeTask(index)} />
 						<label className="slds-checkbox__label" htmlFor={`checkbox-${index}`}>
 							<span className="slds-checkbox--faux"></span>
 							<span className="slds-form-element__label slds-assistive-text">Mark completed</span>

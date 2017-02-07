@@ -9,13 +9,14 @@ module.exports = {
 		compliance: true,
 		dependentChildren: true,
 		dependentParent: null,
-		dependentParentName: null,
+		dependentParentName: '',
 		nested: 0,
 		reminder: 'Email',
 		timeBefore: 1,
 		timeLength: 'day',
 		note: null,
 		expanded: true,
+		disabled: false,
 		completed: false
 	},
 	2: {
@@ -35,6 +36,7 @@ module.exports = {
 		timeLength: 'day',
 		note: null,
 		expanded: true,
+		disabled: true,
 		completed: false
 	},
 	3: {
@@ -54,6 +56,7 @@ module.exports = {
 		timeLength: 'day',
 		note: null,
 		expanded: false,
+		disabled: true,
 		completed: false
 	},
 	4: {
@@ -73,6 +76,7 @@ module.exports = {
 		timeLength: 'day',
 		note: null,
 		expanded: false,
+		disabled: true,
 		completed: false
 	},
 	5: {
@@ -92,6 +96,7 @@ module.exports = {
 		timeLength: 'day',
 		note: null,
 		expanded: false,
+		disabled: true,
 		completed: false
 	},
 	6: {
@@ -111,6 +116,7 @@ module.exports = {
 		timeLength: 'day',
 		note: null,
 		expanded: true,
+		disabled: true,
 		completed: false
 	},
 	7: {
@@ -130,6 +136,7 @@ module.exports = {
 		timeLength: 'day',
 		note: null,
 		expanded: true,
+		disabled: true,
 		completed: false
 	},
 	8: {
@@ -149,6 +156,7 @@ module.exports = {
 		timeLength: 'day',
 		note: null,
 		expanded: false,
+		disabled: true,
 		completed: false
 	},
 	9: {
@@ -168,6 +176,7 @@ module.exports = {
 		timeLength: 'day',
 		note: null,
 		expanded: false,
+		disabled: false,
 		completed: false
 	}
 }

@@ -24,12 +24,10 @@ class App extends React.Component {
 		showMoreModal['open'] = !this.state.showMoreModal['open'];
 
 		if (index > 0) {
-			let tasks = this.state.tasks.tasks[index];
-			showMoreModal['tasks'] = tasks;
+			showMoreModal['tasks'] = this.state.tasks.tasks[index];
 		}
 		else {
-			let tasks = defaultTasks;
-			showMoreModal['tasks'] = tasks;
+			showMoreModal['tasks'] = defaultTasks;
 		}
 		this.setState({ showMoreModal });
 	}
