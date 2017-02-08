@@ -1,13 +1,16 @@
 import React from 'react';
 import ActionPlanTableRow from './ActionPlanTableRow';
+import info from '../images/icons/info.svg';
 
 class ActionPlanTable extends React.Component {
 	constructor(props) {
 		super(props);
 		this.collapseChildren = this.collapseChildren.bind(this);
 		this.getParent = this.getParent.bind(this);
+		this.popoverToogle = this.popoverToogle.bind(this);
 		this.state = {
-			tasks: this.props.tasks
+			tasks: this.props.tasks,
+			popover: false
 		}
 	}
 
@@ -50,7 +53,22 @@ class ActionPlanTable extends React.Component {
 		return this.props.tasks[key];
 	}
 
+	popoverToogle() {
+		this.setState(
+			{ popover: !this.state.popover }
+		);
+		console.log(this.state.popover)
+	}
+
 	render() {
+		let showPopover = ()=> {
+			console.log('trying')
+			if (!this.state.popover) {
+				return 'hide-element';
+			}
+			return 'show-element';
+		};
+
 		return (
 			<div className="actionPlanContainer">
 				<table className="dataTable slds-table slds-table--bordered slds-table--cell-buffer">
@@ -68,8 +86,20 @@ class ActionPlanTable extends React.Component {
 							<th scope="col" className="dataTable-cellLarge">
 								<div className="slds-truncate" title="Stage">Assigned To</div>
 							</th>
-							<th scope="col" className="dataTable-cellSmall">
-								<div className="slds-truncate" title="Confidence">Compliance</div>
+							<th scope="col" className="dataTable-cellSmall--flex" onMouseOver={this.popoverToogle} onMouseOut={this.popoverToogle}>
+								<div className="slds-truncate" title="Required for Compliance">Required</div>
+								<div className="customInfoIcon">
+									<svg className="slds-button__icon slds-button__icon--hint" viewBox="0 0 52 52" aria-hidden="true">
+										<use xlinkHref={info + '#info'}></use>
+									</svg>
+								</div>
+								<div className={`popOverCustom ${showPopover()}`}>
+									<section className="slds-popover slds-nubbin--top-right" role="dialog">
+										<div className="slds-popover__body">
+											<p>A required task means that your compliance team will be checking for this task’s completion for legal reasons.</p>
+										</div>
+									</section>
+								</div>
 							</th>
 							<th scope="Show More" className="dataTable-cellSmall">
 								<div title="Show More"></div>
