@@ -8,7 +8,7 @@ module.exports = {
 	compliance: false,
 	dependentChildren: null,
 	dependentParent: null,
-	dependentParentName: null,
+	dependentParentName: '',
 	nested: 0,
 	reminder: 'Email',
 	timeBefore: 1,

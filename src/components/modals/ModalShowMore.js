@@ -5,6 +5,8 @@ class ModalShowMore extends React.Component {
 	render() {
 		const { taskNames, tasks, showMoreModal, showMoreModalToggle } = this.props;
 		const data = tasks;
+		const priorityValues = ['High', 'Medium', 'Low'];
+		const categoryValues = ['Email', 'Call', 'Meeting', 'Misc'];
 
 		//Show or hide the modal logic
 		let showMoreClass = ()=> {
@@ -12,7 +14,7 @@ class ModalShowMore extends React.Component {
 				return 'hide-element';
 			}
 			return 'show-element';
-		};
+		}
 
 		return (
 			<div className={`custom-modal ${showMoreClass()}`}>
@@ -34,10 +36,11 @@ class ModalShowMore extends React.Component {
 									<label className="slds-form-element__label" htmlFor="select-02">Priority</label>
 									<div className="slds-form-element__control">
 										<div className="slds-select_container">
-											<select className="slds-select" id="select-01">
-												<option>High</option>
-												<option>Medium</option>
-												<option>Large</option>
+											<select value={data.priority} className="slds-select" id="select-01">
+												{Object
+													.keys(priorityValues)
+													.map(key => <option key={key} value={priorityValues[key]}>{priorityValues[key]}</option>)
+												}
 											</select>
 										</div>
 									</div>
@@ -64,10 +67,11 @@ class ModalShowMore extends React.Component {
 									<label className="slds-form-element__label" htmlFor="select-05">Category</label>
 									<div className="slds-form-element__control">
 										<div className="slds-select_container">
-											<select className="slds-select" id="select-05">
-												<option>Phone Call</option>
-												<option>Email</option>
-												<option>Misc</option>
+											<select value={data.category} className="slds-select" id="select-05">
+												{Object
+													.keys(categoryValues)
+													.map(key => <option key={key} value={categoryValues[key]}>{categoryValues[key]}</option>)
+												}
 											</select>
 										</div>
 									</div>
@@ -76,10 +80,10 @@ class ModalShowMore extends React.Component {
 									<label className="slds-form-element__label" htmlFor="text-input-06">Task Dependency</label>
 									<div className="slds-form-element__control">
 										<div className="slds-select_container">
-											<select className="slds-select" id="select-11">
+											<select value={data.dependentParentName} className="slds-select" id="select-11">
 												{Object
 													.keys(taskNames)
-													.map(key => <option key={key}>{taskNames[key]}</option>)
+													.map(key => <option key={key} value={taskNames[key]}>{taskNames[key]}</option>)
 												}
 											</select>
 										</div>
