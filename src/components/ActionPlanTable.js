@@ -57,12 +57,10 @@ class ActionPlanTable extends React.Component {
 		this.setState(
 			{ popover: !this.state.popover }
 		);
-		console.log(this.state.popover)
 	}
 
 	render() {
 		let showPopover = ()=> {
-			console.log('trying')
 			if (!this.state.popover) {
 				return 'hide-element';
 			}
