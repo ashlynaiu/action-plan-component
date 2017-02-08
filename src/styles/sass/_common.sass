@@ -173,6 +173,9 @@ progress[value]::-webkit-progress-bar
 
 progress[value]::-webkit-progress-value
 	background-color: #4BC076
+	transition: 0.25s linear
+	transition-property: width
+
 
 /////////////////
 /////Panels/////
@@ -199,6 +202,10 @@ progress[value]::-webkit-progress-value
 	position: absolute
 	right: 0px
 	top: 35px
+	z-index: 500
+	-webkit-animation: fadeinout .25s linear
+	animation: fadeinout .25s linear
+
 	.slds-popover__body
 		text-transform: none
 		white-space: initial
@@ -209,3 +216,15 @@ progress[value]::-webkit-progress-value
 .customInfoIcon
 	margin-left: 10px
 	margin-top: -2px
+
+@-webkit-keyframes fadeinout
+	0%
+		opacity: 0
+	100%
+		opacity: 1
+
+@keyframes fadeinout
+	0%
+		opacity: 0
+	100%
+		opacity: 1
