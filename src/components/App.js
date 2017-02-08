@@ -43,12 +43,20 @@ class App extends React.Component {
 		}
 		return (
 			<div>
-				<ModalShowMore taskNames={taskNames()} showMoreModal={this.state.showMoreModal} showMoreModalToggle={this.showMoreModalToggle} tasks={this.state.showMoreModal.tasks}></ModalShowMore>
+				<ModalShowMore
+					taskNames={taskNames()}
+					showMoreModal={this.state.showMoreModal}
+					showMoreModalToggle={this.showMoreModalToggle}
+					tasks={this.state.showMoreModal.tasks}>
+				</ModalShowMore>
 				<Header />
 				<div className="bodyContainer">
 					<div className="bodyContainer-leftPanel">
 						<LeftPanel />
-						<ActionPlanCard tasks={tasks} showMoreModalToggle={this.showMoreModalToggle} ></ActionPlanCard>
+						<ActionPlanCard
+							tasks={tasks}
+							showMoreModalToggle={this.showMoreModalToggle} >
+						</ActionPlanCard>
 					</div>
 					<div className="bodyContainer-rightPanel">
 						<RightPanel />

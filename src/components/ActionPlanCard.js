@@ -125,7 +125,11 @@ class ActionPlanCard extends React.Component {
 							<button className="slds-button slds-button--neutral" onClick={() => this.props.showMoreModalToggle()}>New Task</button>
 						</div>
 					</div>
-					<ActionPlanTable tasks={this.props.tasks} showMoreModalToggle={this.props.showMoreModalToggle} completeTask={this.completeTask} ></ActionPlanTable>
+					<ActionPlanTable
+						tasks={this.props.tasks}
+						showMoreModalToggle={this.props.showMoreModalToggle}
+						completeTask={this.completeTask} >
+					</ActionPlanTable>
 				</div>
 			</article>
 		)
