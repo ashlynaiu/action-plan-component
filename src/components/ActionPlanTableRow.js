@@ -19,8 +19,14 @@ class ActionPlanTableRow extends React.Component {
 			return 'show-element';
 		}
 
+		let disabledRowText = () => {
+			if(data.disabled) {
+				return 'disabledRowText'
+			}
+		}
+
 		return (
-			<tr className={`${expandedCal()}`}>
+			<tr className={`${disabledRowText()} ${expandedCal()}`}>
 
 				<ActionPlanTableRowName data={data} collapseChildren={this.props.collapseChildren} index={index} completeTask={completeTask} />
 

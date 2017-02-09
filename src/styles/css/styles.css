@@ -10,6 +10,7 @@ body { width: auto; }
 .show-element { display: inital; }
 
 .actionPlanContainer { overflow: scroll; }
+.actionPlanContainer .dataTable .disabledRowText { color: #6D7996; }
 
 .dataTable .dataTable-chevronDown { width: 12px; height: 7px; margin-right: 10px; }
 .dataTable .chevron-closed { transform: rotate(-0.25turn) translateX(-6px) translateY(-6px); }
@@ -66,7 +67,7 @@ progress[value]::-webkit-progress-value { background-color: #4BC076; transition:
 .bodyContainer-rightPanel { padding: 24px; width: 35%; border-left: 1px solid #d8dde6; }
 .bodyContainer-rightPanel .slds-button-group-list { display: flex; }
 
-.popOverCustom { position: absolute; right: 0px; top: 35px; z-index: 500; -webkit-animation: fadeinout 0.25s linear; animation: fadeinout 0.25s linear; }
+.popOverCustom { position: absolute; right: -10px; top: 38px; z-index: 500; -webkit-animation: fadeinout 0.25s linear; animation: fadeinout 0.25s linear; }
 .popOverCustom .slds-popover__body { text-transform: none; white-space: initial; hyphens: inherit; font-weight: 300; line-height: 1.5; }
 
 .customInfoIcon { margin-left: 10px; margin-top: -2px; }

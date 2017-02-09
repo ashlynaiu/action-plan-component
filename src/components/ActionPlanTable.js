@@ -54,9 +54,11 @@ class ActionPlanTable extends React.Component {
 	}
 
 	popoverToogle() {
-		this.setState(
-			{ popover: !this.state.popover }
-		);
+		setTimeout(() => {
+			this.setState(
+				{ popover: !this.state.popover }
+			);
+		}, 300);
 	}
 
 	render() {
