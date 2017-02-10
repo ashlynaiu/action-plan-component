@@ -7,3 +7,4 @@ https://action-plan-component.herokuapp.com/
 npm install
 npm start
 ```
+Open localhost:3000 in your browser.
